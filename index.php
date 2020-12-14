@@ -35,7 +35,7 @@
 <body>
 <div class="login-box">
   <h2>Formulário de cadastro de aluno</h2>
-  <form>
+  <form method="post">
     <div class="user-box">
       <input type="text" name="nome" required="">
       <label>Nome</label>
@@ -64,13 +64,13 @@
       <input type="text" name="mail" required="">
       <label>e-mail</label>
     </div>
-    <a href="#">
+    <button type="submit">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       CADASTRAR
-    </a>
+    </button>
   </form>
 </div>
 </body>
