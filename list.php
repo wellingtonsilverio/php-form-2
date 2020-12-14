@@ -37,7 +37,7 @@ fclose($file);
       echo '<ul>';
       foreach ($array as &$line) {
         echo '<li>';
-        foreach (explode(';', $line) as &$column) {
+        foreach (explode(', ', $line) as &$column) {
           echo ' ' . $column . ' ';
         }
         echo '<li>';
