@@ -27,6 +27,9 @@ fclose($file);
 <body>
   <div class="login-box">
     <h2>Lista de alunos por RA</h2>
+    <div class="error">
+      <?php print_r($error); ?>
+    </div>
     <?php print_r($array) ?>
   </div>
 </body>

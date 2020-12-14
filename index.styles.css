@@ -12,6 +12,17 @@ button {
 	background: none;
 }
 
+.error {
+	width: 100%;
+
+	padding: 16px;
+
+	font-weight: bold;
+	color: #fff;
+
+	background: #f13333;
+}
+
 .login-box {
 	position: absolute;
 	top: 50%;

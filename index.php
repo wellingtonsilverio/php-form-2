@@ -74,7 +74,7 @@ if ($name && $ra && $sex && $years && $address && $phone && $mail) {
         <input type="text" name="mail" required="">
         <label>e-mail</label>
       </div>
-      <div>
+      <div class="error">
         <?php print_r($error); ?>
       </div>
       <button type="submit">
