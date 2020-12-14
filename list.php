@@ -18,10 +18,16 @@ fclose($file);
 $columName = array('Nome', 'RA', 'Sexo', 'Idade', 'Endereço', 'Telefone', 'e-mail');
 $columId = array('nome', 'ra', 'sexo', 'idade', 'endereco', 'telefone', 'mail');
 
+echo 'array';
+print_r($array);
 foreach ($array as &$line) {
+  echo 'line';
+  print_r($line);
   $returnLine = [];
   foreach (explode(', ', $line) as $key => $column) {
-    $returnLine[$columId[$key]];
+    echo 'column ' . $column;
+    echo $key . ' column ' . $column;
+    $returnLine[$columId[$key]] = $column;
   }
   array_push($return, $returnLine);
 }
@@ -32,11 +38,11 @@ foreach ($array as &$line) {
 
 print_r($return);
 
-$ra = array_column($inventory, 'ra');
+// $ra = array_column($inventory, 'ra');
 
-array_multisort($ra, SORT_DESC, $return);
+// array_multisort($ra, SORT_DESC, $return);
 
-print_r($return);
+// print_r($return);
 ?>
 <!DOCTYPE html>
 <html lang="en">
