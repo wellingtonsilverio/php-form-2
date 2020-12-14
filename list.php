@@ -1,5 +1,6 @@
 <?php
 $array = [];
+$return = [];
 $file = fopen('file.bin', 'r');
 
 if ($file == false) {
@@ -13,6 +14,29 @@ while (true) {
 }
 
 fclose($file);
+
+$columName = array('Nome', 'RA', 'Sexo', 'Idade', 'Endereço', 'Telefone', 'e-mail');
+$columId = array('nome', 'ra', 'sexo', 'idade', 'endereco', 'telefone', 'mail');
+
+foreach ($array as &$line) {
+  $returnLine = [];
+  foreach (explode(', ', $line) as $key => $column) {
+    $returnLine[$columId[$key]];
+  }
+  array_push($return, $returnLine);
+}
+
+// foreach (explode(', ', $array) as $key => $column) {
+//   echo $columName[$key] . ': ' . $column . ' ';
+// }
+
+print_r($return);
+
+$ra = array_column($inventory, 'ra');
+
+array_multisort($ra, SORT_DESC, $return);
+
+print_r($return);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +61,7 @@ fclose($file);
       echo '<ul>';
       foreach ($array as &$line) {
         echo '<li>';
-        foreach (explode(', ', $line) as &$column) {
-          echo ' ' . $column . ' ';
-        }
+
         echo '<li>';
       }
       echo '</ul>';
