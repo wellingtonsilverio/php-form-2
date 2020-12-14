@@ -18,15 +18,14 @@ fclose($file);
 $columName = array('Nome', 'RA', 'Sexo', 'Idade', 'Endereço', 'Telefone', 'e-mail');
 $columId = array('nome', 'ra', 'sexo', 'idade', 'endereco', 'telefone', 'mail');
 
-echo 'array';
+echo ' array ';
 print_r($array);
 foreach ($array as &$line) {
-  echo 'line';
+  echo ' line ';
   print_r($line);
   $returnLine = [];
-  foreach (explode(', ', $line) as $key => $column) {
-    echo 'column ' . $column;
-    echo $key . ' column ' . $column;
+  foreach (explode(', ', $line) as $column => $key) {
+    echo ' ' . $key . ' column ' . $column . ' ';
     $returnLine[$columId[$key]] = $column;
   }
   array_push($return, $returnLine);
