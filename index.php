@@ -67,7 +67,7 @@ if ($name && $ra && $sex && $years && $address && $phone && $mail) {
         <label>e-mail</label>
       </div>
       <div>
-        <?php echo $error; ?>
+        <?php print_r($error); ?>
       </div>
       <button type="submit">
         <span></span>
