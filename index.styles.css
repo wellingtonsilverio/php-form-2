@@ -20,7 +20,9 @@ button {
 	font-weight: bold;
 	color: #fff;
 
-	background: #f13333;
+	background: #f1333355;
+
+	box-sizing: border-box;
 }
 
 .login-box {

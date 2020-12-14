@@ -74,9 +74,11 @@ if ($name && $ra && $sex && $years && $address && $phone && $mail) {
         <input type="text" name="mail" required="">
         <label>e-mail</label>
       </div>
-      <div class="error">
-        <?php print_r($error); ?>
-      </div>
+      <?php if (count($error) > 1) { ?>
+        <div class="error">
+          <?php print_r($error); ?>
+        </div>
+      <?php } ?>
       <button type="submit">
         <span></span>
         <span></span>
