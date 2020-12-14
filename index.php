@@ -18,7 +18,7 @@ $mail = $_POST["mail"];
 if ($name && $ra && $sex && $years && $address && $phone && $mail) {
   $file = fopen('file.bin', 'a');
   if ($file == false) {
-    $error = array('1', 'VNão foi possível criar o arquivo.');
+    $error = array('1', 'Não foi possível criar o arquivo.');
   } else {
     if (!fwrite($file, $name . ", " . $ra . ", " . $sex . ", " . $years . ", " . $address . ", " . $phone . ", " . $mail . ";")) {
       $error = array('1', 'Não foi possível atualizar o arquivo.');
