@@ -9,7 +9,7 @@ if ($file == false) {
 while (true) {
   $linha = fgets($file);
   if ($linha == null) break;
-  array_push($array, $linha);
+  $array = explode(';', $linha);
 }
 
 fclose($file);
@@ -32,7 +32,19 @@ fclose($file);
         <?php print_r($error); ?>
       </div>
     <?php } ?>
-    <?php print_r($array) ?>
+    <?php
+    if (count($array) > 0) {
+      echo '<ul>';
+      foreach ($array as &$line) {
+        echo '<li>';
+        foreach (explode(';', $line) as &$column) {
+          echo ' ' . $column . ' ';
+        }
+        echo '<li>';
+      }
+      echo '</ul>';
+    }
+    ?>
   </div>
 </body>
 
