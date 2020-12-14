@@ -1,4 +1,12 @@
 <?php
+function redirect($url)
+{
+  ob_start();
+  header('Location: ' . $url);
+  ob_end_flush();
+  die();
+}
+
 $name = $_POST["nome"];
 $ra = $_POST["ra"];
 $sex = $_POST["sexo"];
@@ -12,10 +20,10 @@ if ($name && $ra && $sex && $years && $address && $phone && $mail) {
   if ($file == false) {
     $error = array('1', 'VNão foi possível criar o arquivo.');
   } else {
-    if (!fwrite($file, $name + ", " + $ra + ", " + $sex + ", " + $years + ", " + $address + ", " + $phone + ", " + $mail + ";")) {
+    if (!fwrite($file, $name . ", " . $ra . ", " . $sex . ", " . $years . ", " . $address . ", " . $phone . ", " . $mail . ";")) {
       $error = array('1', 'Não foi possível atualizar o arquivo.');
     } else {
-      $redirect = 1;
+      redirect("list.php");
     }
 
     fclose($arquivo);
