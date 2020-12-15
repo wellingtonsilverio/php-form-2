@@ -36,8 +36,6 @@ foreach ($array as &$line) {
 $ra = array_column($return, 'ra');
 
 array_multisort($ra, SORT_ASC, $return);
-
-print_r($return);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,9 +60,11 @@ print_r($return);
       <?php
       if (count($array) > 0) {
         echo '<ul>';
-        foreach ($array as &$line) {
+        foreach ($return as &$line) {
           echo '<li>';
-
+          foreach ($line as $key => $column) {
+            echo '<b>' . $columName[$key] . ':</b> ' . $column . '<br />';
+          }
           echo '<li>';
         }
         echo '</ul>';
