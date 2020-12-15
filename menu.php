@@ -1,6 +1,4 @@
 <div class="menu">
-  <ul>
-    <li>Cadastrar</li>
-    <li>Listar</li>
-  </ul>
+  <a href="index.php">Cadastrar</a>
+  <a href="list.php">Listar</a>
 </div>

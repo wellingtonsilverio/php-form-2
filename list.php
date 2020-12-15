@@ -35,7 +35,7 @@ foreach ($array as &$line) {
 
 $ra = array_column($return, 'ra');
 
-array_multisort($ra, SORT_DESC, $return);
+array_multisort($ra, SORT_ASC, $return);
 
 print_r($return);
 ?>
