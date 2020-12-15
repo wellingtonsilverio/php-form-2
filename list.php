@@ -54,7 +54,7 @@ array_multisort($ra, SORT_ASC, $return);
       <h2>Lista de alunos por RA</h2>
       <?php if (count($error) > 1) { ?>
         <div class="error">
-          <?php print_r($error); ?>
+          <?php echo $error[1]; ?>
         </div>
       <?php } ?>
       <?php

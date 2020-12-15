@@ -78,7 +78,7 @@ if ($name && $ra && $sex && $years && $address && $phone && $mail) {
         </div>
         <?php if (count($error) > 1) { ?>
           <div class="error">
-            <?php print_r($error); ?>
+            <?php echo $error[1]; ?>
           </div>
         <?php } ?>
         <button type="submit">

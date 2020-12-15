@@ -71,6 +71,17 @@ button {
 	text-align: center;
 }
 
+.login-box ul {
+	list-style-type: none;
+}
+
+.login-box li {
+	padding-bottom: 32px;
+
+	font-size: 16px;
+	color: #fff;
+}
+
 .login-box .user-box {
 	position: relative;
 }
