@@ -25,7 +25,7 @@ foreach ($array as &$line) {
   print_r($line);
   $returnLine = [];
   foreach (explode(', ', $line) as $key => $column) {
-    echo ' ' . $key . ' column ' . $column . ' ';
+    echo ' key: ' . $key . ' column: ' . $column . ' ';
     $returnLine[$columId[$key]] = $column;
   }
   array_push($return, $returnLine);
