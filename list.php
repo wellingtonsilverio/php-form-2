@@ -10,12 +10,12 @@ if ($file == false) {
 while (true) {
   $linha = fgets($file);
   if ($linha == null) break;
-  $array = explode(';', $linha);
+  $array = explode(';', substr($linha, 0, -1));
 }
 
 fclose($file);
 
-$columName = array('Nome', 'RA', 'Sexo', 'Idade', 'Endereço', 'Telefone', 'e-mail');
+$columName = array('nome' => 'Nome', 'ra' => 'RA', 'sexo' => 'Sexo', 'idade' => 'Idade', 'endereco' => 'Endereço', 'telefone' => 'Telefone', 'mail' => 'e-mail');
 $columId = array('nome', 'ra', 'sexo', 'idade', 'endereco', 'telefone', 'mail');
 
 foreach ($array as &$line) {
