@@ -25,6 +25,23 @@ button {
 	box-sizing: border-box;
 }
 
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.menu {
+	width: 20vw;
+	height: 100vh;
+
+	background: #ffffff88;
+}
+
+.menu li {
+	width: 100%;
+	padding: 16px;
+}
+
 .login-box {
 	position: absolute;
 	top: 50%;

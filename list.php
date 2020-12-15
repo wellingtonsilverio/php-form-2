@@ -33,7 +33,7 @@ foreach ($array as &$line) {
 // }
 
 
-$ra = array_column($inventory, 'ra');
+$ra = array_column($return, 'ra');
 
 array_multisort($ra, SORT_DESC, $return);
 
