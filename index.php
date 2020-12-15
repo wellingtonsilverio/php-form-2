@@ -43,50 +43,53 @@ if ($name && $ra && $sex && $years && $address && $phone && $mail) {
 </head>
 
 <body>
-  <div class="login-box">
-    <h2>Formulário de cadastro de aluno</h2>
-    <form method="post">
-      <div class="user-box">
-        <input type="text" name="nome" required="">
-        <label>Nome</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="ra" required="">
-        <label>RA</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="sexo" required="">
-        <label>Sexo</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="idade" required="">
-        <label>Idade</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="endereco" required="">
-        <label>Endereço</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="telefone" required="">
-        <label>Telefone</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="mail" required="">
-        <label>e-mail</label>
-      </div>
-      <?php if (count($error) > 1) { ?>
-        <div class="error">
-          <?php print_r($error); ?>
+  <div class="wrapper">
+    <?php require('menu.php') ?>
+    <div class="login-box">
+      <h2>Formulário de cadastro de aluno</h2>
+      <form method="post">
+        <div class="user-box">
+          <input type="text" name="nome" required="">
+          <label>Nome</label>
         </div>
-      <?php } ?>
-      <button type="submit">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        CADASTRAR
-      </button>
-    </form>
+        <div class="user-box">
+          <input type="text" name="ra" required="">
+          <label>RA</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="sexo" required="">
+          <label>Sexo</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="idade" required="">
+          <label>Idade</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="endereco" required="">
+          <label>Endereço</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="telefone" required="">
+          <label>Telefone</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="mail" required="">
+          <label>e-mail</label>
+        </div>
+        <?php if (count($error) > 1) { ?>
+          <div class="error">
+            <?php print_r($error); ?>
+          </div>
+        <?php } ?>
+        <button type="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          CADASTRAR
+        </button>
+      </form>
+    </div>
   </div>
 </body>
 

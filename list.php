@@ -18,30 +18,26 @@ fclose($file);
 $columName = array('Nome', 'RA', 'Sexo', 'Idade', 'Endereço', 'Telefone', 'e-mail');
 $columId = array('nome', 'ra', 'sexo', 'idade', 'endereco', 'telefone', 'mail');
 
-echo ' array ';
-print_r($array);
 foreach ($array as &$line) {
-  echo ' line ';
-  print_r($line);
   $returnLine = [];
   foreach (explode(', ', $line) as $key => $column) {
-    echo ' key: ' . $key . ' column: ' . $column . ' ';
     $returnLine[$columId[$key]] = $column;
   }
-  array_push($return, $returnLine);
+  if (count($returnLine) > 1) {
+    array_push($return, $returnLine);
+  }
 }
 
 // foreach (explode(', ', $array) as $key => $column) {
 //   echo $columName[$key] . ': ' . $column . ' ';
 // }
 
+
+$ra = array_column($inventory, 'ra');
+
+array_multisort($ra, SORT_DESC, $return);
+
 print_r($return);
-
-// $ra = array_column($inventory, 'ra');
-
-// array_multisort($ra, SORT_DESC, $return);
-
-// print_r($return);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,24 +50,27 @@ print_r($return);
 </head>
 
 <body>
-  <div class="login-box">
-    <h2>Lista de alunos por RA</h2>
-    <?php if (count($error) > 1) { ?>
-      <div class="error">
-        <?php print_r($error); ?>
-      </div>
-    <?php } ?>
-    <?php
-    if (count($array) > 0) {
-      echo '<ul>';
-      foreach ($array as &$line) {
-        echo '<li>';
+  <div class="wrapper">
+    <?php require('menu.php') ?>
+    <div class="login-box">
+      <h2>Lista de alunos por RA</h2>
+      <?php if (count($error) > 1) { ?>
+        <div class="error">
+          <?php print_r($error); ?>
+        </div>
+      <?php } ?>
+      <?php
+      if (count($array) > 0) {
+        echo '<ul>';
+        foreach ($array as &$line) {
+          echo '<li>';
 
-        echo '<li>';
+          echo '<li>';
+        }
+        echo '</ul>';
       }
-      echo '</ul>';
-    }
-    ?>
+      ?>
+    </div>
   </div>
 </body>
 
